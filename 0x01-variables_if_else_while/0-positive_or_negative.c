@@ -3,7 +3,6 @@
 #include <stdio.h>
 
 /**
- * The first lines above are header files for the standard library.
  * Description: main - set a random number to the variable.
  * If the number is > 0: is positive, if the number is 0: is zero.
  * If the number is < 0: is negative.
