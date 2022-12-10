@@ -9,11 +9,12 @@
  * Return: 0
  */
 
-int main (void)
+int main(void)
 {
 	int num1 = 48;
 	int num2;
 	int com = 44;
+
 	while (num1 <= 57)
 	{
 		num2 = num1 + 1;
@@ -33,4 +34,3 @@ int main (void)
 	putchar('\n');
 	return (0);
 }
-
