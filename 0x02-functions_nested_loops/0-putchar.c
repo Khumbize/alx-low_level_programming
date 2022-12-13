@@ -7,12 +7,12 @@
 
 int main()
 {
-	char p[20]= "\_putchar";
+	char c[10]= "\_putchar";
 	int k = 0;
 
 	for (k = 0; k < 9; k++)
 	{ 
-		_putchar(p[k]);
+		_putchar(c[k]);
 	}
 	_putchar('\n');
 
