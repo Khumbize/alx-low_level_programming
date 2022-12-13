@@ -5,16 +5,16 @@
  *Return: 0
 */
 
-int main()
+int main(void)
 {
-	char c[10]= "\_putchar";
-	int k = 0;
-
-	for (k = 0; k < 9; k++)
-	{ 
-		_putchar(c[k]);
-	}
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
 	_putchar('\n');
-
-	return(0);
+	return (0);
 }
