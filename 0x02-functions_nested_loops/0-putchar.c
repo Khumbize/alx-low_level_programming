@@ -1,4 +1,4 @@
-#include "school.h"
+#include "main.h"
 
 /**
  *Description: main - A program that prints putchar
