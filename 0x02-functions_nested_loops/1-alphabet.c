@@ -1,17 +1,14 @@
 #include "main.h"
 
 /**
- * Description: main - A program that prints the alphabet
- * Return: 0
+ * Description: print_alphabet - prints the alphabet and a new line.
  */
-
-int main(void)
+void print_alphabet(void)
 {
-	char l = "a";
-	while (l <= "z")
-	{
+	char l;
+
+	for (l = 'a'; l <= 'z'; l++)
 		_putchar(l);
-	       l++;
-	}
-        _putchar("\n");
+
+	_putchar('\n');
 }
