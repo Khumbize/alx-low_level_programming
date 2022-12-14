@@ -19,5 +19,6 @@ int main(void)
 		t2 = t3;
 		t3 = t1 + t2;
 	}
+	printf('\n');
 	return (0);
 }
