@@ -8,8 +8,8 @@ int main(void)
 {
 	int i;
 	int n = 98;
-	int t1 = 1, t2 = 2;
-	int t3 = t1 + t2;
+	unsigned long int t1 = 1, t2 = 2;
+	unsigned long int t3 = t1 + t2;
 
 	printf("%d, %d, ", t1, t2);
 	for (i = 2; i <= n; ++i)
