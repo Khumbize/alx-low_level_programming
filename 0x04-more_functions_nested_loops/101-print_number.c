@@ -7,12 +7,16 @@
  */
 void print_number(int n)
 {
-	for (n > 0)
-	scanf("%d", &n)
-	_putchar("%d\n", n);
+	if (n > 0)
+	{
+		scanf("%d", &n)
+		_putchar("%d\n", n);
+	}
 	else
+	{
 		_putchar("Not");
 		_putchar("an");
 		_putchar("interger");
+	}
 	return (0);
 }
