@@ -12,7 +12,7 @@ int main(void)
 	int t3 = t1 + t2;
 
 	printf("%d, %d, ", t1, t2);
-	for (i = 3; i <= n; ++i)
+	for (i = 2; i <= n; ++i)
 	{
 		printf("%d, ", t3);
 		t1 = t2;
