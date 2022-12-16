@@ -1,48 +1,37 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * Description: print_number - prints an integer
- * @n: number to be printed
+ * print_number - a function that prints an integer
+ * @n: insert num
  * Return: 0
  */
+
 void print_number(int n)
 {
-	int negative = 0;
-	int digit;
-	int divisor;
-	int begin = 0;
-	int place = 10;
+	unsigned int n1, n2;
+	int i;
+	int aux = 1;
 
 	if (n < 0)
 	{
-		negative = 1;
 		n = n * -1;
+		_putchar('-');
 	}
-	while (place >= 0)
+	n1 = n;
+	n2 = n1;
+	if (n1 > 9)
 	{
-		divisor = power(10, place);
-		digit = ((n / divisor) % 10);
-		if (digit == 0 && begin == 0)
+		while (n1 >= 10)
 		{
-			place--;
+			aux = aux * 10;
+			n1 = n1 / 10;
 		}
-		else if (digit != 0 && begin == 0)
-		{
-			begin = 1;
-			if (negative == 1)
-				_putchar('-');
-			_putchar('0' + digit);
-			place--;
-		}
-		else
-		{
-			_putchar('0' + digit);
-			place--;
-		}
+		_putchar((n2 / aux) + '0');
+		aux = aux / 10;
+
+		for (i = aux; i >= 1; i = i / 10)
+			_putchar((n2 / i) % 10 + '0');
 	}
-	if (digit == 0 && divisor == 1)
-	{
-		_putchar(48);
-	}
+	else
+		_putchar(n1 + '0');
 }
