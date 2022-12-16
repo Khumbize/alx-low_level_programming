@@ -2,34 +2,47 @@
 #include "main.h"
 
 /**
- * Description: print_number - a function that prints integers
- * @n: the integer
+ * Description: print_number - prints an integer
+ * @n: number to be printed
  * Return: 0
  */
 void print_number(int n)
 {
-	char text[10] = "Enternum";
-	int  i = 0;
+	int negative = 0;
+	int digit;
+	int divisor;
+	int begin = 0;
+	int place = 10;
 
-	for (i = 0; i < 10; i++)
+	if (n < 0)
 	{
-		_putchar(text[i]);
+		negative = 1;
+		n = n * -1;
 	}
-	scanf("%d", &n);
-	_putchar('\n');
-	if (n > 0)
+	while (place >= 0)
 	{
-		_putchar("%d\n", n);
+		divisor = power(10, place);
+		digit = ((n / divisor) % 10);
+		if (digit == 0 && begin == 0)
+		{
+			place--;
+		}
+		else if (digit != 0 && begin == 0)
+		{
+			begin = 1;
+			if (negative == 1)
+				_putchar('-');
+			_putchar('0' + digit);
+			place--;
+		}
+		else
+		{
+			_putchar('0' + digit);
+			place--;
+		}
 	}
-	else
+	if (digit == 0 && divisor == 1)
 	{
-		_putchar("N");
-		_putchar("o");
-		_putchar("t");
-		_putchar(" ");
-		_putchar("i");
-		_putchar("n");
-		_putchar("t");
+		_putchar(48);
 	}
-	return (0);
 }
