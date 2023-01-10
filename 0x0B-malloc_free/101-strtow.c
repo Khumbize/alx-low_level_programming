@@ -1,5 +1,3 @@
-Task6 : 101-strtow.c
-
 #include "main.h"
 #include <stdlib.h>
 
