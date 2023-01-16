@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * new_dog - a fucntion that creates a new dog.
+ * new_dog - a fucntion that creates a new dog structure.
  * @name: dog name.
  * @age: dog age.
  * @owner: dog owner.
@@ -10,25 +10,25 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *ptr;
+	dog_t *pt;
 
 	char *n, *o;
 	int len_name = _strlen(name), len_owner = _strlen(owner), x;
 
 	pt = malloc(sizeof(dog_t));
-	if (!ptr)
+	if (!pt)
 		return (0);
 	n = malloc(sizeof(char) * (len_name + 1));
 	if (!n)
 	{
 		free(n);
-		free(ptr);
+		free(pt);
 		return (0);
 	}
 	o = malloc(sizeof(char) * (len_owner + 1));
 	if (!o)
 	{
-		free(ptr);
+		free(pt);
 		free(o);
 		free(n);
 		return (0);
@@ -39,10 +39,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	for (x = 0; x < len_owner; x++)
 		o[x] = owner[x];
 	o[x] = '\0';
-	(*ptr).name = n;
-	(*ptr).age = age;
-	(*ptr).owner = o;
-	return (ptr);
+	(*pt).name = n;
+	(*pt).age = age;
+	(*pt).owner = o;
+	return (pt);
 }
 
 /**
