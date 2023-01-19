@@ -2,15 +2,14 @@
 #include <stdarg.h>
 
 /**
- * sum_them_all - a function that returns the sum
- * of all its parameters.
+ * sum_them_all - a function that returns the sum of all its parameters.
  * @n: number of arguments.
  * Return: EXIT_SUCCESS.
  */
 
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list list;
+	va_list numbers;
 
 	int sum = 0;
 
@@ -19,9 +18,9 @@ int sum_them_all(const unsigned int n, ...)
 	if (n == 0)
 		return (0);
 
-	va_start(list, n);
+	va_start(numbers, n);
 	for (x = 0; x < n; x++)
-		sum += va_arg(list, int);
-	va_end(list);
+		sum += va_arg(numbers, int);
+	va_end(numbers);
 	return (sum);
 }
