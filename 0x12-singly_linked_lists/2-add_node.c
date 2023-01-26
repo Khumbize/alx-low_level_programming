@@ -1,53 +1,56 @@
 #include "lists.h"
 
 /**
- * _strlen - returns length of string
- * @s: string
- * Return: length of string
+ * add_node - a function that adds a new node at
+ * the beginning of a list_t list.
+ * @head: node head.
+ * @str: node string.
+ * Return: the address of the new element,
+ * or NULL if it failed.
  */
-
-int _strlen(const char *s)
-{
-	int len;
-
-	len = 0;
-	while (s[len] != '\0')
-	{
-		len++;
-	}
-	return (len);
-}
-
-/**
- * add_node - adds a new node at the beginning of  list_t list
- * @head: head of linked list
- * @str: string to be used as data for node
- * Return: number of elements
- */
-
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new;
 	char *string;
-	int length;
+	list_t *node;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
-		return (NULL);
-	if (str == NULL)
+	if (!head || !str)
 	{
-		string = NULL;
-		length = 0;
+		return (0);
 	}
-	else
-	{
-		string = strdup(str);
-		length = _strlen(str);
-	}
-	new->len = length;
-	new->str = string;
-	new->next = *head;
-	*head = new;
 
-	return (*head);
+	string = strdup(str);
+
+	if (!string)
+	{
+		return (0);
+	}
+	node = malloc(sizeof(list_t));
+	if (!node)
+	{
+		return (0);
+	}
+	node->str = string;
+	node->len = strlen(string);
+	node->next = *head;
+	*head = node;
+	return (node);
+}
+/**
+ * _strlen - a function that swaps integers wih pointers.
+ * @s: is a pointer to a char.
+ * Return: EXIT_SUCCESS.
+ */
+int _strlen(char *s)
+{
+	int x = 0;
+
+	if (!s)
+	{
+		return (0);
+	}
+	while (*(s + x) != '\0')
+	{
+		x++;
+	}
+	return (x);
 }
